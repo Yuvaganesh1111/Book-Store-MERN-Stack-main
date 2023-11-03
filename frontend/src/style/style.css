@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+.navbar{
+    background: #000000;
+    height: 80px;
+    width: 100%;
+    
+    
+    
+}
+ div .logo{
+    float: left;
+    color: white;
+    font-size: 30px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+.navbar ul{
+    float: right;
+    margin-right: 20px;
+}
+.navbar ul li{
+    display: inline-block;
+    
+    margin: 15px 5px;
+    padding: 12px;
+    border: 1px solid white;
+    border-radius: 20px;
+    
+}
+.navbar ul li .a{
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+.navbar ul li:hover{
+    background-color: red;
+}
+.a:hover{
+    color: white;
+}
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+@media (max-width:952px){
+    div .logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    .navbar ul li .a{
+        font-size: 16px;
+    }
+}
+@media (max-width:850px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #070f2c;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    .navbar ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    .navbar ul li .a{
+        font-size: 20px;
+    }
+    #check:checked~ul{
+        left: 0;
+    }
+}
+
+.sign{
+    
+    line-height: 80p;
+    margin: 230px 90px;
+    text-align: center;
+    
+    text-shadow: 20px;
+    box-shadow: 80px;
+    border: 1px solid black;
+}
+.inp{
+    display: block;
+    text-align: center;
+    max-width: 220px;
+    margin: 9px 0;
+    border: 1px solid black;
+}
+
+.signbody{
+    background: #000;
+    min-height: 100vh;
+}
+.signbody::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background: url("../images/bookstore1-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.form-warpper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 430px;
+    padding: 60px;
+    background: rgba(0,0,0,0.75);
+    border-radius: 5px;
+    transform: translate(-50%,-50% );
+}
+.sign-logo {
+    position: relative;
+    z-index: 1;
+    padding: 25px 60px;
+}
+
+.sign-logo h1{
+    color: red;
+    font-weight: bolder;
+    font-size: 40px;
+}
+.form-warpper h2{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.form-warpper .form{
+    margin: 25px 0 65px;
+}
+.form .form-control{
+    position: relative;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.form-control input{
+    height:100%;
+    width: 100%;
+    background: #333;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 4px;
+    padding: 0 20px;
+
+}
+.form-control label{
+position: absolute;
+left: 20px;
+top: 30%;
+color: #8c8c8c;
+pointer-events: none;
+font-size: 1rem;
+
+}
+.form-control input:is(:focus,:valid) ~label{
+    display: none;
+}
+
+.form .signbtn{
+    background-color: red;
+    color: white;
+    
+    border-radius: 3px;
+    margin-bottom: 16px;
+    height: 100%;
+    width: 100%;
+    padding: 7px 20px;
+}
+.form-help label{
+    color: #fff;
+    margin-left: 7px;
+}
+.signup{
+    color: #f3f1f1;
+}
+.signup-link{
+    color: #3c0fdd;
+}
+.error{
+    color: red;
+    position: absolute;
+    top: 47px;
+    margin: 0;
+}

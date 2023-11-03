@@ -1,0 +1,286 @@
+.dashboard {
+  padding: 0;
+  background-color: #f3f3f3; 
+  padding-right: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 20px;
+  padding: 12px;
+}
+.greet {
+  font-weight: bold;
+  font-size: 20px;
+}
+.inp-search {
+  position: relative;
+}
+.search {
+  background: "#f3f3f3";
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 10px;
+  height: 30px;
+}
+.ico {
+  position: absolute;
+  top: 9px;
+  left: 20px;
+  color: #9e9393;
+  pointer-events: none;
+}
+.inp-search span {
+  position: absolute;
+  top: 3px;
+  left: 45px;
+  color: #9e9393;
+}
+.search:is(:focus, :valid) ~ .ico {
+  opacity: 0;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 20px;
+}
+.box {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  background: white;
+  margin: 10px;
+  border-radius: 10px;
+}
+.card-img {
+  padding: 15px;
+  margin: 18px 0px;
+  width: 100px;
+  height: 100px;
+  border-radius: 80px;
+}
+.card-detail {
+  padding-top: 40px;
+}
+.title {
+  color: #bab4b4;
+  margin-bottom: 3px;
+}
+.amount {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+.percent {
+  padding: 2px;
+  margin-bottom: 3px;
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+  margin: 2px;
+}
+.barchart {
+  padding: 20px;
+  background: white;
+  margin: 14px 28px;
+  width: 65%;
+  padding: 20px;
+  border-radius: 10px;
+}
+.barchart p {
+  color: #bab4b4;
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+.pichart {
+  background: white;
+  padding: 10px;
+  margin: 14px 0px;
+
+  border-radius: 10px;
+  width: 30%;
+}
+.pichart p {
+  color: #bab4b4;
+  margin-top: 2px;
+}
+.pi {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 180px;
+  box-shadow: 10px 10px 100px #f3f3f3;
+}
+
+@media (max-width: 1200px) {
+  .card-img {
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+  }
+  .card-detail {
+    padding-top: 15px;
+  }
+  .barchart {
+    width: 50%;
+  }
+  .pichart {
+    width: 40%;
+  }
+}
+@media (max-width: 990px) {
+  .card-img {
+    padding: 6px;
+    width: 50px;
+    height: 50px;
+  }
+  .card-detail {
+    padding-top: 5px;
+  }
+  .doughnut {
+    height: 60%;
+    width: 60%;
+  }
+}
+@media (max-width: 830px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  }
+  .card-img {
+    padding: 15px;
+    width: 90px;
+    height: 90px;
+  }
+  .card-detail {
+    padding-top: 25px;
+  }
+  .pichart {
+    width: 45%;
+  }
+}
+
+@media (max-width: 760px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(1fr, minmax(120px, 1fr));
+  }
+  .card-img {
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+  }
+  .card-detail {
+    margin-top: 20px;
+  }
+  .chart {
+    flex-direction: column;
+    align-items: center;
+    margin: 2px;
+  }
+  .barchart {
+    width: 80%;
+  }
+  .pichart {
+    width: 80%;
+  }
+  .title {
+    font-size: 25px;
+  }
+  .amount {
+    font-size: 28px;
+  }
+  .percent {
+    font-size: 20px;
+  }
+  .pichart {
+    margin: 20px;
+  }
+  .pi {
+    box-shadow: none;
+  }
+}
+@media (max-width: 560px) {
+  .card-img {
+    padding: 20px;
+    width: 80px;
+    height: 80px;
+  }
+  .card-detail {
+    margin-top: 0px;
+  }
+}
+@media (max-width: 410px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 330px));
+  }
+  .card-img {
+    padding: 15px;
+    width: 70px;
+    height: 70px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .amount {
+    font-size: 22px;
+  }
+  .percent {
+    font-size: 16px;
+  }
+}
+@media (max-width: 370px) {
+  .header {
+    flex-direction: column;
+    padding: 8px;
+  }
+  .greet {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .barchart-heading {
+    flex-direction: column;
+  }
+
+  .pi {
+    box-shadow: 0;
+    margin-left: 6px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .amount {
+    font-size: 22px;
+  }
+  .percent {
+    font-size: 18px;
+  }
+}
+@media (max-width: 290px) {
+  .cards {
+    grid-template-columns: repeat(1, minmax(180px, 250px));
+    padding: 20px;
+  }
+  .box {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-img {
+    padding: 15px;
+    width: 90px;
+    height: 90px;
+  }
+  .card-detail {
+    padding: 15px;
+  }
+}

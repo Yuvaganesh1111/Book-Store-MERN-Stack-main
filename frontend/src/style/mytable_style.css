@@ -1,0 +1,192 @@
+.mytable {
+  padding: 20px;
+  border-collapse: collapse;
+  background-color: #fff;
+  margin: 25px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.tb {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tb th {
+  color: #bab4b4;
+  padding: 10px;
+  padding-bottom: 15px;
+  text-align: left;
+  border-color: #f3f3f3;
+  border-width: 0px 0px 3px 0px;
+  border-style: solid;
+}
+
+.tb th,
+.tb td {
+  padding: 10px;
+}
+
+.tb img {
+  width: 55px;
+  height: 38px;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+
+table h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+table p {
+  margin: 0;
+  color: #777;
+}
+.price {
+  font-weight: bold;
+}
+.product {
+  width: 65%;
+}
+.sales {
+  padding: 0px 10px;
+}
+.stock {
+  padding: 0px 10px;
+}
+.mytb-search {
+  position: relative;
+}
+.tb-search {
+  background: "#f3f3f3";
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 10px;
+  height: 30px;
+}
+.tb-ico {
+  position: absolute;
+  top: 9px;
+  left: 20px;
+  color: #9e9393;
+  pointer-events: none;
+}
+.mytb-search span {
+  position: absolute;
+  top: 3px;
+  left: 45px;
+  color: #9e9393;
+  pointer-events: none;
+}
+.mytb-search input:is(:focus, :valid) ~ .tb-ico {
+  opacity: 0;
+}
+
+@media (max-width: 1095px) {
+  .product {
+    width: 50%;
+  }
+}
+@media (max-width: 805px) {
+  .product {
+    width: 30%;
+  }
+  table th,
+  table td {
+    border: 1px solid #ccc;
+  }
+}
+@media (max-width: 640px) {
+  table h3 {
+    text-align: center;
+  }
+  .product {
+    justify-content: end;
+    width: inherit;
+  }
+
+  table thead tr {
+    display: none;
+  }
+
+  table tr {
+    display: block;
+  }
+
+  table th,
+  table td {
+    padding: 10px;
+  }
+
+  table td {
+    text-align: end;
+    display: block;
+    font-size: 15px;
+  }
+
+  table td::before {
+    content: attr(data-title) ": ";
+    float: left;
+    margin-right: 5px;
+  }
+  tbody tr {
+    border: 3px solid rgb(198, 198, 198);
+  }
+  table img {
+    width: 50px;
+    height: 32px;
+    margin-right: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .mytb-head {
+    flex-direction: column;
+    align-items: center;
+  }
+  .selector {
+    font-size: 10px;
+  }
+  .tb-search {
+    margin: 20px 0px;
+  }
+  .tb-ico {
+    top: 25px;
+    left: 10px;
+    color: #9e9393;
+  }
+  .mytb-search span {
+    position: absolute;
+    top: 22px;
+    left: 36px;
+    color: #9e9393;
+  }
+}
+@media (max-width: 430px) {
+  table img {
+    display: none;
+  }
+  table h3 {
+    font-size: 14px;
+  }
+
+  table p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 365px) {
+  .tb-search {
+    width: 120px;
+  }
+}
+@media (max-width: 340px) {
+  .mytable {
+    padding: 15px;
+    margin: 20px;
+    width: 160px;
+    margin-left: 10px;
+  }
+}
