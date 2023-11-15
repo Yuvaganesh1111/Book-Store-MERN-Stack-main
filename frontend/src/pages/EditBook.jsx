@@ -15,6 +15,7 @@ const EditBook = () => {
   const {id} = useParams();
   const { enqueueSnackbar } = useSnackbar();
   const [myimage, setImage] = useState(null);
+  const [price, setPrice] = useState('');
 
   useEffect(() => {
     setLoading(true);
@@ -25,6 +26,8 @@ const EditBook = () => {
         setPublishYear(response.data.publishYear)
         setTitle(response.data.title)
         setImage(response.data.img)
+        setPrice(response.data.price)
+
         setLoading(false);
       }).catch((error) => {
         setLoading(false);
@@ -39,6 +42,7 @@ const EditBook = () => {
     formdata.append('author',author);
     formdata.append('publishYear',publishYear);
     formdata.append('img',myimage);
+    formdata.append('price',price);
 
 
     
@@ -89,6 +93,15 @@ const EditBook = () => {
             type='number'
             value={publishYear}
             onChange={(e) => setPublishYear(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2  w-full '
+          />
+        </div>
+        <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Price</label>
+          <input
+            type='number'
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>

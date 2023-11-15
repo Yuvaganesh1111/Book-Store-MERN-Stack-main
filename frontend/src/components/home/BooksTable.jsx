@@ -9,6 +9,7 @@ const BooksTable = ({ books }) => {
       <thead>
         <tr>
           <th className='border border-slate-600 rounded-md'>No</th>
+          <th className='border border-slate-600 rounded-md'>Image</th>
           <th className='border border-slate-600 rounded-md'>Title</th>
           <th className='border border-slate-600 rounded-md max-md:hidden'>
             Author
@@ -24,6 +25,13 @@ const BooksTable = ({ books }) => {
           <tr key={book._id} className='h-8'>
             <td className='border border-slate-700 rounded-md text-center'>
               {index + 1}
+            </td>
+            <td className='border border-slate-700 rounded-md '>
+            <img
+        style={{ height: "50px",width: "50%",margin:"auto"}}
+        src={`http://localhost:5555/${book.image}`}
+        alt={book.title}
+      />
             </td>
             <td className='border border-slate-700 rounded-md text-center'>
               {book.title}

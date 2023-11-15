@@ -11,7 +11,7 @@ const verify=async (req,res,next)=>{
     const token = authHeader && authHeader.split(' ')[1]
         if(token==null){
             console.log("token not found");
-            res.status(401).send("token not found")
+           return res.status(401).send("token not found")
         }
         const data=jwt.verify(token,process.env.SECRET_KEY);
         if(!data){
@@ -27,7 +27,7 @@ const verify=async (req,res,next)=>{
     }
     catch(err){
         console.log(err)
-         return res.send("failed to authenticate")
+         return res.status(500).send("internal server error")
       }
 }
 export default verify;

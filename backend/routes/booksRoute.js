@@ -25,7 +25,7 @@ const upload = multer({ storage: storage });
 // Route for Saving a new Book
 router.post('/', upload.single('img'), async (request, response) => {
   try {
-    if (!request.body.title || !request.body.author || !request.body.publishYear) {
+    if (!request.body.title || !request.body.author ||  !request.body.price || !request.body.publishYear) {
       return response.status(400).send("Please enter all the required data: title, author, and publish year.");
     }
     console.log(request.file);
@@ -39,6 +39,7 @@ router.post('/', upload.single('img'), async (request, response) => {
       title: request.body.title,
       author: request.body.author,
       publishYear: request.body.publishYear,
+      price: request.body.price,
       image:request.file.originalname
     };
 
@@ -52,7 +53,7 @@ router.post('/', upload.single('img'), async (request, response) => {
 });
 
 // Route for Get All Books from database
-router.get('/', async (request, response) => {
+router.get('/',verify, async (request, response) => {
   try {
     const books = await Book.find({});
 
@@ -86,6 +87,7 @@ router.put('/:id',upload.single('img'), async (request, response) => {
     if (
       !request.body.title ||
       !request.body.author ||
+      !request.body.price ||
       !request.body.publishYear
     ) {
       return response.status(400).send({
@@ -101,6 +103,7 @@ router.put('/:id',upload.single('img'), async (request, response) => {
       title: request.body.title,
       author: request.body.author,
       publishYear: request.body.publishYear,
+      price: request.body.price,
       image:request.file.originalname
     };
 

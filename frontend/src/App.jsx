@@ -11,11 +11,17 @@ import Signup from './pages/Signup';
 import SignIn from './pages/SignIn';
 import Footer from './components/Footer';
 import DashBoard from './pages/DashBoard';
+import Success from './pages/Success';
+import Cancel from './pages/Cancel';
+import { BrowserRouter } from 'react-router-dom';
+import Cart from './pages/Cart';
+import Books from './pages/Books';
+
 
 const App = () => {
   return (
     <>
-    
+    <BrowserRouter>
     <Routes>
     <Route path='/' element={<SignIn />} />
       <Route path='/signup' element={<Signup />} />
@@ -27,13 +33,22 @@ const App = () => {
       
     
       <Route path='/home' element={<Home />} />
+      <Route path='/books' element={<Books />} />
+
+
       <Route path='/dashboard' element={<DashBoard />} />
       <Route path='/books/create' element={<CreateBook />} />
       <Route path='/books/details/:id' element={<ShowBook />} />
       <Route path='/books/edit/:id' element={<EditBook />} />
       <Route path='/books/delete/:id' element={<DeleteBook />} />
+      <Route path='/success' element={<Success />} />
+      <Route path='/cancel' element={<Cancel />} />
+      <Route path='/cart' element={<Cart />} />
+
+
       
     </Routes>
+    </BrowserRouter>
     
     
     

@@ -14,6 +14,13 @@ const bookSchema = mongoose.Schema(
       type: Number,
       
     },
+    price:{
+      type:Number,
+    },
+    quantity:{
+      type:Number,
+      default:1,
+    },
     image:{
       type:String
     }

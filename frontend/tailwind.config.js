@@ -15,6 +15,9 @@ export default {
       transparent: 'transparent',
       current: 'currentColor',
       'blue':'#6590D5',
+      'darkblue':'#0033cc',
+
+
       'white': '#ffffff',
       'purple': '#3f3cbb',
       'midnight': '#121063',
@@ -25,6 +28,8 @@ export default {
       'yellow': '#fde047',
       'black':'#000000',
       'red':'#EA445A',
+      'teal':'#88d8c0 ',
+
       'darkred':'#dc2626',
 
       'lightgreen':'#74F0ED',

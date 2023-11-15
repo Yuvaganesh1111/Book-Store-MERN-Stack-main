@@ -1,16 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import {BsFillBookFill} from 'react-icons/bs'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import {TfiMenu} from 'react-icons/tfi'
 import {Collapse,initTE} from "tw-elements";
 import axios from 'axios';
+import { getCartTotal } from '../CartSlice';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function NavBar() {
   const[isMobile,setMob]=useState(false);
+  const dispatch=useDispatch();
   const handleLogout=()=>{
     localStorage.removeItem("token");
     console.log("token deleted");
   }
+  useEffect(() => {
+    dispatch(getCartTotal());
+  });
+  const { totalQuantity } = useSelector((state) => state.cart);
   
   return (
     <>
@@ -35,8 +43,11 @@ function NavBar() {
 
     <ul className=''>
       <li><NavLink to='/home' className='a'>Home</NavLink></li>
+      <li><NavLink to='/books' className='a'>Books</NavLink></li>
+
 
       <li><NavLink to='/dashboard' className='a'>DashBoard</NavLink></li>
+      <li ><NavLink to='/cart' className='a' style={{position:"relative" }}>My Cart<span className='cartno'>{totalQuantity}</span></NavLink></li>
       
       <li><NavLink to='/' className='a'><button onClick={handleLogout}>Logout</button></NavLink></li>
 

@@ -6,6 +6,9 @@ import loginRoute from './routes/loginRoute.js';
 import user from './routes/user.js'
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import payment from './routes/payment.js';
+
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -32,6 +35,8 @@ app.get('/', (request, response) => {
 app.use('/books', booksRoute);
 app.use('/sign',loginRoute);
 app.use('/sign',user);
+app.use('/do',payment);
+
 
 
 

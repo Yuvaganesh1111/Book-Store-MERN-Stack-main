@@ -59,7 +59,7 @@ router.post('/in', async (req, res) => {
       }
       
       const token=jwt.sign({_id:user._id,
-      email:user.email},process.env.SECRET_KEY);
+      email:user.email},process.env.SECRET_KEY,{expiresIn:"4h"});
   
       console.log("Sign-in success");
       return res.status(200).json({ message: "Sign-in success",
