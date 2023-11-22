@@ -28,27 +28,28 @@ const BookSingleCard = ({ book }) => {
 
 
   return (
-    <div className='border-2 border-gray-500 rounded-lg px-4 py-2 m-4  hover:shadow-xl'>
+    <div className='border-2 border-gray-500 bg-white rounded-lg px-4 py-2 m-4  hover:shadow-xl'>
       <img
-        style={{ width: "300px", height: "200px" }}
+        style={{ width: "200px", height: "300px",margin:"auto" }}
         src={`http://localhost:5555/${book.image}`}
         alt={book.title}
       />
-      <h2 className=' top-5 right-8 my-3 px-1 py-1 bg-blue font-bold text-lg rounded-lg px-4 py-1 w-26'>
-      Rs : {book.price}
-      </h2>
+      
 
-      <h4 className='my-2 text-gray'>{book._id}</h4>
-      <div className='flex justify-start items-center gap-x-2'>
+      
+      <div className='flex justify-start items-center gap-x-2 pt-4 px-5'>
         <PiBookOpenTextLight className='text-red-300 text-2xl' />
         <h2 className='my-1'>{book.title}</h2>
       </div>
-      <div className='flex justify-start items-center gap-x-2'>
+      <div className='flex justify-start items-center gap-x-2 px-5'>
         <BiUserCircle className='text-red-300 text-2xl' />
         <h2 className='my-1'>{book.author}</h2>
       </div>
+      <h2 className=' top-5 right-8   py-1  font-bold text-lg rounded-lg px-6  w-26'>
+      Rs : {book.price}
+      </h2>
 
-      <div className='flex justify-between items-center gap-x-2 mt-4 p-4'>
+      <div className='flex justify-between items-center gap-x-2 mt-2 p-4'>
         <button className='bg-darkred w-20 rounded-lg text-white px-4 py-1' onClick={()=>{makePayment(book)}}>
           Buy
         </button>

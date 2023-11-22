@@ -16,6 +16,7 @@ import Cancel from './pages/Cancel';
 import { BrowserRouter } from 'react-router-dom';
 import Cart from './pages/Cart';
 import Books from './pages/Books';
+import AdminWork from './pages/AdminWork';
 
 
 const App = () => {
@@ -44,6 +45,8 @@ const App = () => {
       <Route path='/success' element={<Success />} />
       <Route path='/cancel' element={<Cancel />} />
       <Route path='/cart' element={<Cart />} />
+      <Route path='/admin' element={<AdminWork />} />
+
 
 
       

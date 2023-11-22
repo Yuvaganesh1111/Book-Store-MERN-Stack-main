@@ -224,3 +224,13 @@ font-size: 1rem;
     
     padding: 2px 2px;
 }
+
+@media (max-width:635px){
+    .bookdetail{
+        flex-direction: column;
+        margin: 10px;
+    }
+    .book_image_detail{
+        margin: auto;
+    }
+}

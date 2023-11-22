@@ -55,7 +55,7 @@ function Cart() {
         ))}
         <div className="total">
           <span>Total Price of your Cart</span>
-          <span>Rs - {totalPrice}</span>
+          <span>Rs : {totalPrice}</span>
           <button className='bg-darkred w-20 rounded-lg text-white px-4 py-1' onClick={()=>{makePaymentCart(cart)}}>
           Buy
         </button>

@@ -44,8 +44,10 @@ function NavBar() {
     <ul className=''>
       <li><NavLink to='/home' className='a'>Home</NavLink></li>
       <li><NavLink to='/books' className='a'>Books</NavLink></li>
+      <li><NavLink to='/admin' className='a'>admin</NavLink></li>
 
 
+      
       <li><NavLink to='/dashboard' className='a'>DashBoard</NavLink></li>
       <li ><NavLink to='/cart' className='a' style={{position:"relative" }}>My Cart<span className='cartno'>{totalQuantity}</span></NavLink></li>
       
