@@ -2,7 +2,7 @@ import express from 'express'
 ;
 import stripe from 'stripe';
 
-const stripeSecretKey = '';
+const stripeSecretKey = 'sk_test_51O9PJiSAPOsR99qORdkuDCqacFvkdynE0dyV6TlYs41WfnbCwmT5z9rc1zHuz1JijO5OuOhlpCfT6T9OVBobunpI00VzoT7Pcy';
 const stripeClient = new stripe(stripeSecretKey);
 const route=express.Router()
 
