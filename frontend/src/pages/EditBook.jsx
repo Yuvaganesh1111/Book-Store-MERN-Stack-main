@@ -25,7 +25,7 @@ const EditBook = () => {
         setAuthor(response.data.author);
         setPublishYear(response.data.publishYear)
         setTitle(response.data.title)
-        setImage(response.data.img)
+        setImage(response.data.imgurl)
         setPrice(response.data.price)
 
         setLoading(false);
@@ -37,18 +37,19 @@ const EditBook = () => {
   }, [])
   
   const handleEditBook = () => {
-    const formdata=new FormData();
-    formdata.append('title',title);
-    formdata.append('author',author);
-    formdata.append('publishYear',publishYear);
-    formdata.append('img',myimage);
-    formdata.append('price',price);
+    const data = {
+      title: title,
+      author: author,
+      publishYear: publishYear,
+      price: price,
+      imgurl: myimage,
+    };
 
 
     
     setLoading(true);
     axios
-      .put(`http://localhost:5555/books/${id}`, formdata)
+      .put(`http://localhost:5555/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Edited successfully', { variant: 'success' });
@@ -108,9 +109,9 @@ const EditBook = () => {
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Upload Image</label>
           <input
-            type='file'
-            multiple
-            onChange={(e) =>{ setImage(e.target.files[0]); console.log("hi  -"+e.target.files)}}
+            type='text'
+            value={myimage}
+            onChange={(e) =>{ setImage(e.target.value); }}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>

@@ -17,7 +17,7 @@ const BookModal = ({ book, onClose }) => {
           onClick={onClose}
         />
         <img style={{width:"200px",height:"300px"}}
-        src={`http://localhost:5555/${book.image}`}
+        src={book.imgurl}
         alt={book.title}
       />
         

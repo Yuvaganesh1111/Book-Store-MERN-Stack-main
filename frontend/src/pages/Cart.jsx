@@ -24,43 +24,44 @@ function Cart() {
   return (
     <>
       <NavBar />
-      <article className="mt-20">
-        {cart.map((item) => (
-          <div className="cart_box" key={item._id}>
-            <div className="cart_img">
-              <img
-                style={{ height: "50px", width: "100px", borderRadius: "7px" }}
-                src={`http://localhost:5555/${item.image}`}
-                alt={item.title}
-              />
-              <p>{item.title}</p>
-            </div>
-            <div>
-              <button  onClick={()=>{dispatch(incQuantity(item._id))}}> + </button>
-              <button>{item.quantity}</button>
-              <button onClick={()=>{dispatch(decQuantity(item._id))}}> - </button>
-            </div>
-            <div>
-              <span style={{background:"none"}}>Price:</span>
-              <span>{item.price}</span>
-              <button
-                onClick={() => {
-                  removeitem(item._id);
-                }}
-              >
-                Remove
-              </button>
-            </div>
-          </div>
-        ))}
-        <div className="total">
-          <span>Total Price of your Cart</span>
-          <span>Rs : {totalPrice}</span>
-          <button className='bg-darkred w-20 rounded-lg text-white px-4 py-1' onClick={()=>{makePaymentCart(cart)}}>
-          Buy
+      <article className="mt-20 cart-container">
+  {cart.map((item) => (
+    <div className="cart_box" key={item._id}>
+      <div className="cart_img">
+        <img
+          
+          src={item.imgurl}
+          alt={item.title}
+        />
+        <p className="mt-6 text-base">{item.title}</p>
+      </div>
+      <div className="quantity-buttons">
+        <button onClick={() => {dispatch(incQuantity(item._id))}}> + </button>
+        <button>{item.quantity}</button>
+        <button onClick={() => {dispatch(decQuantity(item._id))}}> - </button>
+      </div>
+      <div className="cart-details">
+        
+        <span className="">Rs:{item.price}</span>
+        <button className="mt-3"
+          onClick={() => {
+            removeitem(item._id);
+          }}
+        >
+          Remove
         </button>
-        </div>
-      </article>
+      </div>
+    </div>
+  ))}
+  <div className="total">
+    <span className="total_text">Total Price of your Cart</span>
+    <span>Rs: {totalPrice}</span>
+    <button className='bg-darkred w-20 rounded-lg text-white px-4 py-1' onClick={() => {makePaymentCart(cart)}}>
+      Buy
+    </button>
+  </div>
+</article>
+
     </>
   );
 }

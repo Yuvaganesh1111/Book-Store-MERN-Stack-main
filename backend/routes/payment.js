@@ -2,7 +2,7 @@ import express from 'express'
 ;
 import stripe from 'stripe';
 
-const stripeSecretKey = 'sk_test_51O9PJiSAPOsR99qORdkuDCqacFvkdynE0dyV6TlYs41WfnbCwmT5z9rc1zHuz1JijO5OuOhlpCfT6T9OVBobunpI00VzoT7Pcy';
+const stripeSecretKey = '';
 const stripeClient = new stripe(stripeSecretKey);
 const route=express.Router()
 
@@ -25,7 +25,7 @@ route.post("/payment",async(req,res)=>{
                             currency:"inr",
                             product_data:{
                                 name:products.title,
-                                images:[products.image]
+                                images:[products.imgurl]
                             },
                             unit_amount:products.price * 100,
                         },
@@ -54,7 +54,7 @@ route.post("/payment_cart",async(req,res)=>{
             currency:"inr",
             product_data:{
                 name:product.title,
-                images:[product.image]
+                images:[product.imgurl]
             },
             unit_amount:product.price * 100,
         },

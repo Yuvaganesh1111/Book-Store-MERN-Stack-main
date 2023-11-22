@@ -14,6 +14,10 @@ article{
     display: flex;
     width: 400px;
 }
+.cart_img img{
+    width: 80px;
+    height: 100px;
+}
 .cart_img p {
     font-weight: bold;
     margin-left: 10px;
@@ -66,3 +70,41 @@ article{
     color: green;
     font-weight: bold;
 }
+@media (max-width: 600px) {
+    .cart-container {
+      display: flex;
+      flex-direction: column;
+      
+    }
+    .cart_img img{
+        width: 50px;
+        height: 70px;
+    }
+  
+    .cart_box {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .cart_img {
+      text-align: center;
+    }
+  
+    .quantity-buttons {
+    
+      margin: 5px;
+    } 
+  
+    .cart-details span{
+        
+      margin-bottom: 10px;
+    }
+  
+    .total span:nth-child(1){
+        font-size: 0.8rem;
+    }
+    .total span:nth-child(2){
+        font-size: 0.8rem;
+    }
+        
+  }

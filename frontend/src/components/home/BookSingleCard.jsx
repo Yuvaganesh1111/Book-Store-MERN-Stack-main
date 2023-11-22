@@ -31,7 +31,7 @@ const BookSingleCard = ({ book }) => {
     <div className='border-2 border-gray-500 bg-white rounded-lg px-4 py-2 m-4  hover:shadow-xl'>
       <img
         style={{ width: "200px", height: "300px",margin:"auto" }}
-        src={`http://localhost:5555/${book.image}`}
+        src={book.imgurl}
         alt={book.title}
       />
       

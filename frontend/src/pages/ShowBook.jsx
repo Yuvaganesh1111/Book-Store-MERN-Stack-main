@@ -38,7 +38,7 @@ const ShowBook = () => {
           <div>
             <img
               className="mr-5 mt-5 w-96 book_image_detail "
-              src={`http://localhost:5555/${book.image}`}
+              src={book.imgurl}
               alt={book.title}
             />
           </div>

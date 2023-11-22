@@ -51,8 +51,8 @@ function NewBooks({books}) {
         <SwiperSlide id={book._id} >
         <div key={book._id} className='mb-4' >
             <img
-        style={{ width: "183x", height: "277px" }}
-        src={`http://localhost:5555/${book.image}`}
+        style={{ height: "320px" }}
+        src={book.imgurl}
         alt={book.title}
       />
       <p className='box-border h-16  '>{book.title}</p>

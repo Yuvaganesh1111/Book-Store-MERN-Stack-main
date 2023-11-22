@@ -29,7 +29,7 @@ const BooksTable = ({ books }) => {
             <td className='border border-slate-700 rounded-md '>
             <img
         style={{ height: "50px",width: "50%",margin:"auto"}}
-        src={`http://localhost:5555/${book.image}`}
+        src={book.imgurl}
         alt={book.title}
       />
             </td>
